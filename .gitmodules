@@ -1,0 +1,3 @@
+[submodule "src/tragamillas"]
+	path = src/tragamillas
+	url = https://github.com/IFC303/tragamillas
