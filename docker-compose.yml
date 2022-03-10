@@ -18,7 +18,7 @@ services:
       - "9000:9000"
     volumes:
       - ./src:/usr/local/apache2/htdocs
-      - ./xdebug:/var/logs/xdebug
+      - ./docker/php:/var/logs/xdebug
     working_dir: /usr/local/apache2/htdocs
   mysql:
     image: mysql:8.0.27
