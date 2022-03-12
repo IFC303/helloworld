@@ -1,15 +1,14 @@
 version: "3.8"
 services:
-  nginx:
-    container_name: nginx
-    build: ./docker/nginx
-    command: nginx -g "daemon off;"
+  apache:
+    container_name: apache
+    build: ./docker/apache
     links:
       - php
     ports:
       - "80:80"
     volumes:
-      - ./src:/var/www/html
+      - ./src:/usr/local/apache2/htdocs
   php:
     container_name: php
     build: ./docker/php
@@ -18,9 +17,9 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./src:/var/www/html
+      - ./src:/usr/local/apache2/htdocs
       - ./docker/php:/var/logs/xdebug
-    working_dir: /var/www/html
+    working_dir: /usr/local/apache2/htdocs
   mysql:
     image: mysql:8.0.27
     container_name: mysql
