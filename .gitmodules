@@ -1,3 +1,6 @@
 [submodule "src/tragamillas"]
 	path = src/tragamillas
 	url = https://github.com/IFC303/tragamillas
+[submodule "src/ligne_paginatejs"]
+	path = src/ligne_paginatejs
+	url = https://github.com/IFC303/ligne_paginatejs
