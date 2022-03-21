@@ -1,1 +1,2 @@
 xdebug.log
+/docker/nginx/ssl/*.pem

@@ -8,8 +8,10 @@ services:
       - php
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./src:/var/www/html
+      - ./docker/nginx/ssl/:/etc/nginx/ssl/
   php:
     container_name: php
     build: ./docker/php
