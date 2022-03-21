@@ -1,8 +1,9 @@
 version: "3.8"
 services:
   php:
-    container_name: php
+    container_name: helloworld
     build: ./docker/php
+    image: ifc303/helloworld
     links:
       - mysql
     ports:
