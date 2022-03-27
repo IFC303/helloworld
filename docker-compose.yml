@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.7"
 services:
   php:
     container_name: helloworld
@@ -9,8 +9,9 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./src:/var/www/html
-      - ./docker/php:/var/logs/xdebug
+      - ./src:/var/www/html:ro
+      - ./docker/php:/var/logs/xdebug:ro
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini:ro
     working_dir: /var/www/html
   nginx:
     container_name: nginx
@@ -25,8 +26,8 @@ services:
       - ./src:/var/www/html
       - ./docker/nginx/ssl/:/etc/nginx/ssl/
   mysql:
-    image: mysql:8.0.27
     container_name: mysql
+    build: ./docker/mysql
     environment:
       MYSQL_ROOT_PASSWORD: toor
       MYSQL_DATABASE: helloworld
